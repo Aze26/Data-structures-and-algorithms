@@ -1,28 +1,27 @@
 #include<iostream>
+#include<vector>
 using namespace std;
-void bubble_sort(int *arr,int size)
+void bubbleSort(vector<int> &v)
 {
-    int temp;
-    for (int i = 0; i < size-1; i++)
+    int n=v.size();
+    for (int i = 0; i < n-1; i++)
     {
-        for (int j = 0; j < size-i-1; j++)
+        for (int j = 0; j < n-i-1; j++)
         {
-            if (arr[j]>arr[j+1])
+            if (v[j]>v[j+1])
             {
-                temp=arr[j];
-                arr[j]=arr[j+1];
-                arr[j+1]=temp;
+                swap(v[j],v[j+1]);
             }
         }
     }
 }
 int main()
 {
-    int array[5]={2,1,3,5,4};
-    bubble_sort(array,5);
+    vector<int> v2={10,9,8,7,6};
+    bubbleSort(v2);
     for (int i = 0; i < 5; i++)
     {
-        cout<<array[i]<<endl;
+        cout<<v2[i]<<endl;
     }
     system("pause");
     return 0;
